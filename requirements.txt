@@ -1,0 +1,5 @@
+nflreadypy
+polars
+pandas
+jupyter
+streamlit
