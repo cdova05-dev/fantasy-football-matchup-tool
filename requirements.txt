@@ -1,5 +1,3 @@
-nflreadypy
-polars
-pandas
-jupyter
 streamlit
+polars
+nflreadpy
