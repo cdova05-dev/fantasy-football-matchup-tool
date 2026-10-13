@@ -15,7 +15,13 @@ from __future__ import annotations
 from typing import Iterable
 
 import nflreadpy as nfl
+from nflreadpy.config import update_config
 import polars as pl
+
+# Streamlit already caches the completed dashboard for 15 minutes in app.py.
+# Disable nflreadpy's longer internal cache so each dashboard rebuild checks
+# nflverse for newly published schedules/stats instead of reusing stale files.
+update_config(cache_mode="off", verbose=False)
 
 
 MY_PLAYERS = [
