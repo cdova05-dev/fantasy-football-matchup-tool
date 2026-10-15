@@ -19,12 +19,14 @@ st.set_page_config(
 # DATA
 # ============================================================
 
+CACHE_VERSION = "2026-10-14-net-pass-v2"
+
 @st.cache_data(ttl=900, show_spinner="Loading current NFL matchup data...")
-def load_dashboard_data():
+def load_dashboard_data(cache_version: str):
     return build_dashboard_data()
 
 
-matchup_board, player_details = load_dashboard_data()
+matchup_board, player_details = load_dashboard_data(CACHE_VERSION)
 
 
 # ============================================================
