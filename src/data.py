@@ -218,7 +218,7 @@ def get_defense_stats(defense_check: pl.DataFrame) -> pl.DataFrame:
         .group_by("opponent_team")
         .agg([
             pl.len().alias("def_games_played"),
-            (pl.col("passing_yards") - pl.col("sack_yards_lost")).mean().alias("pass_yards_allowed"),
+            (pl.col("passing_yards") + pl.col("sack_yards_lost")).mean().alias("pass_yards_allowed"),
             pl.col("passing_tds").sum().alias("pass_tds_allowed"),
             pl.col("passing_tds").mean().alias("pass_tds_allowed_pg"),
             pl.col("rushing_yards").mean().alias("rush_yards_allowed"),
